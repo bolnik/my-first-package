@@ -11,6 +11,7 @@ _docpress
 
 lib
 dist
+.parcel-cache
 tsconfig.tsbuildinfo
 
 # Visual Studio Code configs
