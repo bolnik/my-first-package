@@ -1,3 +1,4 @@
+
 # This is a name of the workflow
 name: build
 # Controls when the workflow will run
@@ -13,6 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: Pnpm install
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
 
       - name: Checkout
         # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -27,13 +32,13 @@ jobs:
           registry-url: https://registry.npmjs.org/
 
       - name: Install dependencies
-        run: npm install
+        run: pnpm install
 
       - name: Build
-        run: npm run build
+        run: pnpm run build
 
       - name: Publish
-        run: npm run publish
+        run: pnpm run publish
 
         env:
           # We need this to our NPM account
