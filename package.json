@@ -15,6 +15,10 @@
     "prepare": "pnpm run build",
     "prepublishOnly": "pnpm test && pnpm run prettier && pnpm run lint"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bolnik/my-first-package.git"
+  },
   "author": "Amirreza",
   "license": "MIT",
   "devDependencies": {
